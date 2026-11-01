@@ -29,7 +29,7 @@ This repository is a home for skills I build and use day to day, shared so you c
    ```
 2. **Copy a skill into your skills directory**
    ```bash
-   cp -r agent-skills/<skill-name> ~/.claude/skills/
+   cp -r agent-skills/claude/<skill-name> ~/.claude/skills/
    ```
 3. **Use it.** Ask your agent for something the skill covers, or invoke it directly with `/<skill-name>`.
 
@@ -59,11 +59,11 @@ The `description` is what the agent uses to decide when to load the skill, so ma
 
 ## 🗂️ Skills
 
-Skills will be added here soon. Check back, or watch the repo to get notified.
+More skills are added over time. Watch the repo to get notified.
 
 | Skill | What it does |
 | ----- | ------------ |
-| _coming soon_ | |
+| [🎬 reel-competitor-teardown](claude/reel-competitor-teardown) | View-only analysis of one Instagram creator's reels and posts, producing a designed report with hook and caption patterns and a playbook. |
 
 ## 🤝 Contributing
 
