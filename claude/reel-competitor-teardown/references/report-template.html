@@ -1,0 +1,300 @@
+<title>Reel Teardown Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Schibsted+Grotesk:wght@400;500;700;800&display=swap">
+<style>
+/* Layout: single reading column. Verdict first, then profile, reel dossiers (viral, recent), posts, patterns, playbook, evidence. */
+:root{
+  --bg:#F2F5F4; --surface:#FFFFFF; --ink:#14201F; --muted:#5A6B69; --line:#D5DDDB;
+  --accent:#0B6B63; --accent-soft:#DCEFEC; --hot:#C2410C; --hot-soft:#FBE6DC;
+  --good:#15803D; --warn:#A16207; --low:#6B7280; --bar-recent:#9DB3AF;
+  --display:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --body:"Schibsted Grotesk",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0D1413; --surface:#141E1D; --ink:#E4EDEB; --muted:#93A5A2; --line:#263635;
+  --accent:#4FD1C0; --accent-soft:#163A36; --hot:#FB923C; --hot-soft:#3A2415;
+  --good:#4ADE80; --warn:#FACC15; --low:#9CA3AF; --bar-recent:#4B6461; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0D1413; --surface:#141E1D; --ink:#E4EDEB; --muted:#93A5A2; --line:#263635;
+  --accent:#4FD1C0; --accent-soft:#163A36; --hot:#FB923C; --hot-soft:#3A2415;
+  --good:#4ADE80; --warn:#FACC15; --low:#9CA3AF; --bar-recent:#4B6461; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.55;
+  padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px}
+.wrap{max-width:1040px;margin:0 auto;display:flex;flex-direction:column;gap:44px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.15}
+h1{font-size:clamp(28px,5vw,44px);font-weight:800;letter-spacing:-.02em}
+h2{font-size:21px;font-weight:700;letter-spacing:-.01em}
+h3{font-size:15px;font-weight:700}
+p{margin:0}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+section{display:flex;flex-direction:column;gap:16px;min-width:0}
+.sec-head{display:flex;flex-direction:column;gap:4px}
+.sec-head p{color:var(--muted);max-width:68ch}
+
+.banner{border:1px dashed var(--hot);background:var(--hot-soft);color:var(--ink);padding:10px 14px;border-radius:6px;font-size:13px}
+.top{display:flex;flex-direction:column;gap:14px}
+.top .meta{display:flex;flex-wrap:wrap;gap:6px 18px;color:var(--muted);font-size:13px}
+.verdict{font-size:clamp(17px,2.4vw,21px);max-width:62ch;font-weight:500}
+.legend{display:flex;flex-wrap:wrap;gap:8px;font-size:12px;color:var(--muted)}
+.chip{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--line);border-radius:999px;padding:2px 10px;font-size:12px;background:var(--surface)}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--muted)}
+.dot.seen{background:var(--accent)} .dot.derived{background:var(--warn)} .dot.unver{background:transparent;border:1.5px solid var(--low)}
+
+.take{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.card .ev{font-size:13px;color:var(--muted)}
+.conf{align-self:flex-start;font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;padding:1px 8px;border-radius:4px;border:1px solid currentColor}
+.conf.high{color:var(--good)} .conf.medium{color:var(--warn)} .conf.low{color:var(--low)}
+
+dl.facts{display:grid;grid-template-columns:max-content 1fr;gap:8px 20px;margin:0}
+dl.facts dt{color:var(--muted);font-size:13px}
+dl.facts dd{margin:0;min-width:0;overflow-wrap:anywhere}
+.profile{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:16px}
+@media (max-width:720px){.profile{grid-template-columns:1fr}}
+.pills{display:flex;flex-wrap:wrap;gap:6px}
+.pill{font-size:12px;padding:2px 9px;border-radius:5px;background:var(--accent-soft);color:var(--ink)}
+
+/* reel dossier rows */
+.tablewrap{overflow-x:auto}
+.rowhead,.reel>summary{display:grid;grid-template-columns:28px minmax(110px,1fr) minmax(150px,1.4fr) 64px 60px minmax(110px,1fr) minmax(100px,1fr);gap:12px;align-items:center;padding:10px 14px;min-width:760px}
+.rowhead{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.reel{background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.reel+.reel{margin-top:6px}
+.reel>summary{cursor:pointer;list-style:none}
+.reel>summary::-webkit-details-marker{display:none}
+.reel>summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:8px}
+.reel[open]>summary{border-bottom:1px solid var(--line)}
+.reel .rk{font-family:var(--mono);color:var(--muted)}
+.reel .idn b{font-family:var(--mono);font-size:13px;font-weight:600}
+.reel .idn i{display:block;font-style:normal;font-size:12px;color:var(--muted)}
+.vw{display:flex;align-items:center;gap:8px;min-width:0}
+.vw .track{flex:1;height:8px;background:var(--line);border-radius:4px;overflow:hidden;min-width:40px}
+.vw .fill{display:block;height:100%;background:var(--accent)}
+.vw.recent .fill{background:var(--bar-recent)}
+.vw em{font-style:normal;font-family:var(--mono);font-size:13px;min-width:48px;text-align:right}
+.num{font-family:var(--mono);font-size:13px;text-align:right}
+.rate{font-weight:600}
+.rate.up{color:var(--hot)}
+.tag{font-size:12px;padding:2px 8px;border-radius:5px;border:1px solid var(--line);overflow-wrap:anywhere;justify-self:start}
+.tag.hook{background:var(--accent-soft);border-color:transparent}
+.detail{padding:14px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px 24px}
+.detail h3{font-size:12px;font-family:var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-weight:600;margin-bottom:4px}
+.detail p,.detail li{font-size:14px}
+.detail ul{margin:0;padding-left:18px}
+.unv{color:var(--low);font-style:italic}
+
+/* charts */
+.chartbox{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:14px;overflow-x:auto}
+svg text{font-family:var(--mono);font-size:10px;fill:var(--muted)}
+svg .bar-v{fill:var(--accent)} svg .bar-r{fill:var(--bar-recent)}
+svg .med{stroke:var(--hot);stroke-width:1.5;stroke-dasharray:4 3}
+svg .grid{stroke:var(--line);stroke-width:1}
+svg .medlbl{fill:var(--hot)}
+
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+th,td{text-align:left;padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+td.n,th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-nums}
+.tbl{background:var(--surface);border:1px solid var(--line);border-radius:8px;overflow-x:auto}
+.tbl tr:last-child td{border-bottom:0}
+.delta{font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+.hookgrid{display:grid;grid-template-columns:minmax(130px,1.2fr) minmax(120px,2fr) 110px;gap:8px 14px;align-items:center;min-width:420px}
+.hb{display:flex;flex-direction:column;gap:3px}
+.hb span{display:block;height:7px;border-radius:3px}
+.hb .v{background:var(--accent)} .hb .r{background:var(--bar-recent)}
+.split{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.list{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:8px}
+.list li{max-width:70ch}
+.test{display:flex;flex-direction:column;gap:2px}
+.test small{color:var(--muted);font-size:12px}
+.foot{font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:6px}
+.empty{color:var(--muted);font-style:italic;font-size:14px}
+@media (prefers-reduced-motion:no-preference){.reel{transition:border-color .15s}.reel:hover{border-color:var(--accent)}}
+</style>
+
+<div class="wrap" id="app"></div>
+
+<script id="report-data" type="application/json">__DATA__</script>
+<script>
+(function(){
+  var app=document.getElementById('app');
+  var raw=document.getElementById('report-data').textContent.trim();
+  if(raw==='__DATA__'||!raw){app.innerHTML='<p class="empty">No data injected. Replace the __DATA__ marker with the collected and analysed JSON.</p>';return;}
+  var D=JSON.parse(raw);
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]});}
+  function fmt(n){if(n==null||isNaN(n))return 'n/a';if(n>=1e6)return (n/1e6).toFixed(1)+'M';if(n>=1e5)return Math.round(n/1e3)+'K';if(n>=1e4)return (n/1e3).toFixed(1)+'K';return Number(n).toLocaleString('en-US');}
+  function pct(x){return x==null||isNaN(x)?'n/a':(x*100).toFixed(2)+'%';}
+  function median(a){a=a.filter(function(x){return x!=null&&!isNaN(x)}).sort(function(x,y){return x-y});if(!a.length)return null;var m=Math.floor(a.length/2);return a.length%2?a[m]:(a[m-1]+a[m])/2;}
+  function by(k,dir){return function(a,b){return dir*((a[k]||0)-(b[k]||0));};}
+  function count(arr,f){var o={};arr.forEach(function(x){var k=f(x);if(k!=null)o[k]=(o[k]||0)+1});return o;}
+  function top(o){var best=null;Object.keys(o).forEach(function(k){if(best===null||o[k]>o[best])best=k});return best===null?'n/a':best+' ('+o[best]+')';}
+  function rate(r){return r.views?r.comments/r.views:null;}
+  function band(s){return s<=12?'<=12s':s<=30?'13-30s':s<=45?'31-45s':'>45s';}
+  function dstr(iso){try{return new Date(iso).toLocaleDateString('en-GB',{day:'numeric',month:'short',year:'numeric'});}catch(e){return iso||''}}
+
+  var M=D.meta||{},P=D.profile||{},A=D.analysis||{};
+  var reels=(D.reels||[]).filter(function(r){return !r.collab});
+  var viral=reels.filter(function(r){return (r.sets||[]).indexOf('viral')>-1}).sort(by('views',-1));
+  var recent=reels.filter(function(r){return (r.sets||[]).indexOf('recent')>-1}).sort(function(a,b){return new Date(b.posted_at)-new Date(a.posted_at)});
+  var posts=(D.posts||[]).filter(function(p){return !p.collab});
+  var medRecentViews=median(recent.map(function(r){return r.views}));
+  var maxViews=Math.max.apply(null,reels.map(function(r){return r.views||0}).concat([1]));
+  var medRate=median(reels.map(rate));
+
+  function reelRow(r,i,isRecent){
+    var rt=rate(r);
+    var mult=medRecentViews?(r.views/medRecentViews):null;
+    var h=r.hook||{},c=r.caption||{},a=r.audio||{},f=r.format||{},s=r.spoken||{};
+    return '<details class="reel"><summary>'
+      +'<span class="rk">'+(i+1)+'</span>'
+      +'<span class="idn"><b>'+esc(r.id)+'</b><i>'+esc(dstr(r.posted_at))+' · '+esc(r.duration_s)+'s</i></span>'
+      +'<span class="vw'+(isRecent?' recent':'')+'"><span class="track"><span class="fill" style="width:'+Math.max(2,(r.views/maxViews*100)).toFixed(1)+'%"></span></span><em>'+fmt(r.views)+'</em></span>'
+      +'<span class="num">'+fmt(r.comments)+'</span>'
+      +'<span class="num rate'+(rt&&medRate&&rt>medRate*1.5?' up':'')+'">'+pct(rt)+'</span>'
+      +'<span class="tag hook">'+esc(h.class||'n/a')+'</span>'
+      +'<span class="tag">'+esc(c.cta_type||'n/a')+'</span>'
+      +'</summary><div class="detail">'
+      +'<div><h3>Hook</h3><p>'+esc(h.paraphrase||'not recorded')+'</p><p class="delta">first-second visual: '+esc(h.first_second_visual||'n/a')+' · overlay '+esc(h.overlay_words==null?'n/a':h.overlay_words)+' words</p></div>'
+      +'<div><h3>Format</h3><p>'+esc(f.visual_setup||'n/a')+'</p><p class="delta">overlay: '+esc(f.overlay_style||'n/a')+'</p></div>'
+      +'<div><h3>Audio</h3><p>'+esc(a.type||'n/a')+' · '+esc(a.label||'n/a')+'</p><p class="delta">'+(a.usage_count!=null?fmt(a.usage_count)+' reels use this audio':'usage not read')+'</p></div>'
+      +'<div><h3>Caption</h3><p>opens: '+esc(c.opening_type||'n/a')+' · '+esc(c.words==null?'n/a':c.words)+' words · '+esc(c.hashtag_count==null?'n/a':c.hashtag_count)+' tags</p><p class="delta">structure: '+esc((c.structure||[]).join(' → ')||'n/a')+'</p></div>'
+      +'<div><h3>Reach vs everyday</h3><p>'+(mult?mult.toFixed(1)+'x the recent median ('+fmt(medRecentViews)+')':'n/a')+'</p><p class="delta">likes '+fmt(r.likes)+' · comments '+fmt(r.comments)+'</p></div>'
+      +'<div><h3>Spoken content</h3><p class="unv">'+(s.status==='transcribed'?esc(s.hook_paraphrase||''):'not verified')+'</p></div>'
+      +'</div></details>';
+  }
+  function reelTable(list,isRecent){
+    if(!list.length)return '<p class="empty">No reels in this set.</p>';
+    return '<div class="tablewrap"><div class="rowhead"><span>#</span><span>Reel</span><span>Views</span><span style="text-align:right">Cmts</span><span style="text-align:right">Rate</span><span>Hook</span><span>CTA</span></div>'
+      +list.map(function(r,i){return reelRow(r,i,isRecent)}).join('')+'</div>';
+  }
+
+  function recentChart(){
+    if(!recent.length)return '';
+    var list=recent.slice().reverse(),W=640,H=230,L=44,B=34,T=14,n=list.length;
+    var mx=Math.max.apply(null,list.map(function(r){return r.views}));
+    var scale=function(v){return H-B-(v/mx)*(H-B-T)};
+    var bw=(W-L-10)/n;
+    var out='<svg viewBox="0 0 '+W+' '+H+'" role="img" aria-label="Views of recent reels in date order with the median marked" width="100%" style="min-width:520px">';
+    [0,.5,1].forEach(function(t){var y=scale(mx*t);out+='<line class="grid" x1="'+L+'" x2="'+(W-6)+'" y1="'+y+'" y2="'+y+'"/><text x="'+(L-6)+'" y="'+(y+3)+'" text-anchor="end">'+fmt(Math.round(mx*t))+'</text>';});
+    list.forEach(function(r,i){
+      var x=L+i*bw+bw*.18,w=bw*.64,y=scale(r.views);
+      var isV=(r.sets||[]).indexOf('viral')>-1;
+      out+='<rect class="'+(isV?'bar-v':'bar-r')+'" x="'+x+'" y="'+y+'" width="'+w+'" height="'+(H-B-y)+'" rx="2"/>';
+      out+='<text x="'+(x+w/2)+'" y="'+(H-B+13)+'" text-anchor="middle">'+esc(new Date(r.posted_at).toLocaleDateString('en-GB',{day:'numeric',month:'short'}))+'</text>';
+    });
+    if(medRecentViews){var ym=scale(medRecentViews);out+='<line class="med" x1="'+L+'" x2="'+(W-6)+'" y1="'+ym+'" y2="'+ym+'"/><text class="medlbl" x="'+(W-8)+'" y="'+(ym-5)+'" text-anchor="end">median '+fmt(Math.round(medRecentViews))+'</text>';}
+    return out+'</svg>';
+  }
+
+  function cmp(label,vf,rf){return '<tr><td>'+esc(label)+'</td><td class="n">'+vf+'</td><td class="n">'+rf+'</td></tr>';}
+  function setStats(list){
+    return {
+      views:median(list.map(function(r){return r.views})),
+      rate:median(list.map(rate)),
+      dur:median(list.map(function(r){return r.duration_s})),
+      words:median(list.map(function(r){return (r.caption||{}).words})),
+      tags:median(list.map(function(r){return (r.caption||{}).hashtag_count})),
+      orig:list.length?list.filter(function(r){return (r.audio||{}).type==='original'}).length/list.length:null,
+      hook:top(count(list,function(r){return (r.hook||{}).class})),
+      cta:top(count(list,function(r){return (r.caption||{}).cta_type})),
+      setup:top(count(list,function(r){return (r.format||{}).visual_setup})),
+      band:top(count(list,function(r){return r.duration_s==null?null:band(r.duration_s)}))
+    };
+  }
+  function compareTable(){
+    var v=setStats(viral),r=setStats(recent);
+    var cad='n/a';
+    if(recent.length>1){var d=recent.map(function(x){return new Date(x.posted_at).getTime()});var span=(Math.max.apply(null,d)-Math.min.apply(null,d))/864e5+1;cad=(recent.length/(span/7)).toFixed(1)+' / week';}
+    return '<table><thead><tr><th>Signal</th><th class="n">Viral set</th><th class="n">Recent set</th></tr></thead><tbody>'
+      +cmp('Median views',fmt(v.views),fmt(r.views))
+      +cmp('Median comment rate',pct(v.rate),pct(r.rate))
+      +cmp('Median duration',v.dur==null?'n/a':v.dur.toFixed(1)+'s',r.dur==null?'n/a':r.dur.toFixed(1)+'s')
+      +cmp('Common duration band',esc(v.band),esc(r.band))
+      +cmp('Most common hook',esc(v.hook),esc(r.hook))
+      +cmp('Most common CTA',esc(v.cta),esc(r.cta))
+      +cmp('Most common setup',esc(v.setup),esc(r.setup))
+      +cmp('Original audio share',v.orig==null?'n/a':Math.round(v.orig*100)+'%',r.orig==null?'n/a':Math.round(r.orig*100)+'%')
+      +cmp('Median caption words',v.words==null?'n/a':Math.round(v.words),r.words==null?'n/a':Math.round(r.words))
+      +cmp('Median hashtags',v.tags==null?'n/a':Math.round(v.tags),r.tags==null?'n/a':Math.round(r.tags))
+      +cmp('Posting cadence (recent)','n/a',cad)
+      +'</tbody></table>';
+  }
+
+  function hookBars(){
+    var classes={};reels.forEach(function(r){var k=(r.hook||{}).class;if(k)classes[k]=1});
+    var keys=Object.keys(classes);
+    var rows=keys.map(function(k){
+      var all=reels.filter(function(r){return (r.hook||{}).class===k});
+      var vc=viral.filter(function(r){return (r.hook||{}).class===k}).length;
+      var rc=recent.filter(function(r){return (r.hook||{}).class===k}).length;
+      return {k:k,vc:vc,rc:rc,n:all.length,rate:median(all.map(rate))};
+    }).sort(function(a,b){return (b.rate||0)-(a.rate||0)});
+    var maxc=Math.max.apply(null,rows.map(function(r){return Math.max(r.vc,r.rc)}).concat([1]));
+    var html='<div class="chartbox"><div class="hookgrid"><span class="eyebrow">Hook class</span><span class="eyebrow">Count: viral / recent</span><span class="eyebrow" style="text-align:right">Median comment rate</span>';
+    rows.forEach(function(r){
+      html+='<span>'+esc(r.k)+(r.n<3?' <span class="unv">(n='+r.n+')</span>':'')+'</span>'
+        +'<span class="hb"><span class="v" style="width:'+(r.vc/maxc*100)+'%;min-width:'+(r.vc?3:0)+'px"></span><span class="r" style="width:'+(r.rc/maxc*100)+'%;min-width:'+(r.rc?3:0)+'px"></span></span>'
+        +'<span class="num">'+pct(r.rate)+'</span>';
+    });
+    return html+'</div></div>';
+  }
+
+  function postsTable(){
+    if(!posts.length)return '<p class="empty">No non-reel posts were collected.</p>';
+    return '<div class="tbl"><table><thead><tr><th>Post</th><th>Type</th><th class="n">Likes</th><th class="n">Comments</th><th class="n">Caption words</th><th>Topic</th><th>CTA</th></tr></thead><tbody>'
+      +posts.slice().sort(function(a,b){return new Date(b.posted_at)-new Date(a.posted_at)}).map(function(p){
+        return '<tr><td class="mono">'+esc(p.id)+'<div class="delta">'+esc(dstr(p.posted_at))+'</div></td><td>'+esc(p.type)+(p.slides?' ('+esc(p.slides)+')':'')+'</td><td class="n">'+fmt(p.likes)+'</td><td class="n">'+fmt(p.comments)+'</td><td class="n">'+esc(p.caption_words==null?'n/a':p.caption_words)+'</td><td>'+esc(p.topic||'')+'</td><td>'+esc(p.cta_type||'none')+'</td></tr>';
+      }).join('')+'</tbody></table></div>';
+  }
+
+  function list(a,empty){return a&&a.length?'<ul class="list">'+a.map(function(x){return '<li>'+esc(x)+'</li>'}).join('')+'</ul>':'<p class="empty">'+esc(empty||'None recorded.')+'</p>';}
+
+  var html='';
+  if(M.sample)html+='<div class="banner"><b>Sample data.</b> Fictional account, shown to preview the layout. Nothing here describes a real creator.</div>';
+  html+='<header class="top"><span class="eyebrow">Reel teardown · '+esc(M.analysed_at||'')+'</span>'
+    +'<h1>@'+esc(P.handle||M.handle||'account')+'</h1>'
+    +'<div class="meta"><span>'+esc(P.display_name||'')+'</span><span class="mono">'+fmt(P.followers)+' followers</span><span class="mono">'+fmt(P.posts_count)+' posts</span><span class="mono">'+esc(M.reels_viewed||reels.length)+' reels · '+esc(M.posts_viewed||posts.length)+' posts viewed</span></div>'
+    +(A.verdict?'<p class="verdict">'+esc(A.verdict)+'</p>':'')
+    +'<div class="legend"><span class="chip"><span class="dot seen"></span>seen on the page</span><span class="chip"><span class="dot derived"></span>derived or computed</span><span class="chip"><span class="dot unver"></span>not verified</span></div></header>';
+
+  html+='<section><div class="sec-head"><h2>What to take from this</h2><p>Medians over small sets. Read the confidence tag before acting.</p></div><div class="take">'
+    +((A.takeaways||[]).map(function(t){return '<div class="card"><span class="conf '+esc(t.confidence||'low')+'">'+esc(t.confidence||'low')+'</span><h3>'+esc(t.claim)+'</h3><p class="ev">'+esc(t.evidence||'')+'</p>'+(t.why_hypothesis?'<p class="ev"><b>Hypothesis:</b> '+esc(t.why_hypothesis)+'</p>':'')+'</div>'}).join('')||'<p class="empty">No takeaways written yet.</p>')
+    +'</div></section>';
+
+  html+='<section><div class="sec-head"><h2>Profile</h2></div><div class="profile"><div class="card"><dl class="facts">'
+    +'<dt>Positioning</dt><dd>'+esc(P.positioning||'n/a')+'</dd>'
+    +'<dt>Bio, in short</dt><dd>'+esc(P.bio_summary||'n/a')+'</dd>'
+    +'<dt>Link in bio</dt><dd>'+esc(P.link_type||'n/a')+'</dd>'
+    +'<dt>Category label</dt><dd>'+esc(P.category_label||'none')+'</dd>'
+    +'<dt>Following</dt><dd class="mono">'+fmt(P.following)+'</dd>'
+    +'<dt>Account check</dt><dd>'+(P.account_url_checked?'handle and display name confirmed against the request':'not confirmed')+'</dd></dl></div>'
+    +'<div class="card"><h3>Content pillars</h3><div class="pills">'+((P.pillars||[]).map(function(x){return '<span class="pill">'+esc(x)+'</span>'}).join('')||'<span class="empty">n/a</span>')+'</div><h3>Highlights</h3><div class="pills">'+((P.highlights||[]).map(function(x){return '<span class="pill">'+esc(x)+'</span>'}).join('')||'<span class="empty">none</span>')+'</div></div></div></section>';
+
+  html+='<section><div class="sec-head"><h2>Most viral reels</h2><p>Top '+viral.length+' by views. Open a row for hook, format, audio and caption anatomy. Orange rate means more than 1.5x this account\'s median comment rate.</p></div>'+reelTable(viral,false)+'</section>';
+
+  html+='<section><div class="sec-head"><h2>Last '+recent.length+' reels</h2><p>Newest first. Dark bars are also in the viral set.</p></div><div class="chartbox">'+recentChart()+'</div>'+reelTable(recent,true)+'</section>';
+
+  html+='<section><div class="sec-head"><h2>Breakout vs everyday</h2><p>'+esc(A.viral_vs_recent||'')+'</p></div><div class="tbl">'+compareTable()+'</div></section>';
+
+  html+='<section><div class="sec-head"><h2>Hook patterns</h2><p>'+esc(A.hook_notes||'')+'</p></div>'+hookBars()+'</section>';
+
+  html+='<section><div class="sec-head"><h2>Posts</h2><p>Photos and carousels from the main grid.</p></div>'+postsTable()+(A.caption_notes?'<p class="ev" style="max-width:70ch">'+esc(A.caption_notes)+'</p>':'')+'</section>';
+
+  html+='<section><div class="sec-head"><h2>Playbook for your account</h2><p>Structure only. Nothing here reuses the creator\'s wording.</p></div><div class="split">'
+    +'<div class="card"><h3>Steal the structure</h3>'+list(A.steal)+'</div>'
+    +'<div class="card"><h3>Avoid</h3>'+list(A.avoid)+'</div></div>'
+    +'<div class="card"><h3>Tests to run</h3><ul class="list">'+((A.tests||[]).map(function(t){return '<li class="test"><span>'+esc(t.idea)+'</span><small>Why: '+esc(t.why)+' · Read: '+esc(t.metric)+'</small></li>'}).join('')||'<li class="empty">No tests written yet.</li>')+'</ul></div></section>';
+
+  html+='<section class="foot"><div class="sec-head"><h2>Evidence and gaps</h2></div>'
+    +'<p>Collected view-only in the built-in browser. '+esc(M.collabs_excluded||0)+' collab reel(s) excluded. Spoken content: '+esc(M.spoken_status||'not verified')+'.</p>'
+    +list((A.caveats||[]).concat((M.gaps||[]).map(function(g){return 'Could not read: '+g})),'No gaps recorded.')+'</section>';
+
+  app.innerHTML=html;
+})();
+</script>

@@ -1,0 +1,1060 @@
+{
+ "meta": {
+  "sample": true,
+  "handle": "sample.creator",
+  "analysed_at": "2026-11-01",
+  "source": "built-in browser, view only",
+  "reels_viewed": 21,
+  "posts_viewed": 6,
+  "collabs_excluded": 1,
+  "spoken_status": "not verified",
+  "gaps": [
+   "audio usage count on one reel"
+  ]
+ },
+ "profile": {
+  "handle": "sample.creator",
+  "display_name": "Sample Creator",
+  "followers": 48200,
+  "following": 120,
+  "posts_count": 214,
+  "bio_summary": "Engineer who builds with AI tools and shares what worked, with a lead form in the link",
+  "positioning": "A working engineer showing real setups to other engineers and career switchers",
+  "pillars": [
+   "AI tooling",
+   "workflow breakdowns",
+   "career lessons",
+   "day in the life"
+  ],
+  "highlights": [
+   "Setups",
+   "Lessons",
+   "Travel"
+  ],
+  "link_type": "form",
+  "category_label": "Digital creator",
+  "account_url_checked": true
+ },
+ "reels": [
+  {
+   "id": "SMP001",
+   "url": "https://www.instagram.com/reel/SMP001/",
+   "collab": false,
+   "sets": [
+    "viral"
+   ],
+   "views": 412000,
+   "likes": 14800,
+   "comments": 6900,
+   "posted_at": "2026-06-02T12:00:00Z",
+   "duration_s": 8.4,
+   "audio": {
+    "type": "licensed",
+    "label": "Sample Artist | Sample Track",
+    "usage_count": 350000
+   },
+   "hook": {
+    "class": "outcome-flex",
+    "overlay_words": 9,
+    "first_second_visual": "face",
+    "paraphrase": "Claims one setup removes a recurring chore for good"
+   },
+   "format": {
+    "visual_setup": "car-selfie",
+    "overlay_style": "static, left-aligned, serif"
+   },
+   "caption": {
+    "opening_type": "cta-first",
+    "words": 150,
+    "cta_type": "keyword-comment",
+    "hashtag_count": 25,
+    "structure": [
+     "cta",
+     "reaction",
+     "list",
+     "stakes",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP002",
+   "url": "https://www.instagram.com/reel/SMP002/",
+   "collab": false,
+   "sets": [
+    "viral"
+   ],
+   "views": 268000,
+   "likes": 9800,
+   "comments": 4100,
+   "posted_at": "2026-04-18T12:00:00Z",
+   "duration_s": 31,
+   "audio": {
+    "type": "original",
+    "label": "Original audio",
+    "usage_count": null
+   },
+   "hook": {
+    "class": "struggle-to-lesson",
+    "overlay_words": 14,
+    "first_second_visual": "face",
+    "paraphrase": "Admits a costly failure and promises the lesson written down"
+   },
+   "format": {
+    "visual_setup": "selfie-talking",
+    "overlay_style": "static, centered"
+   },
+   "caption": {
+    "opening_type": "story-open",
+    "words": 210,
+    "cta_type": "keyword-comment",
+    "hashtag_count": 25,
+    "structure": [
+     "cta",
+     "story",
+     "credibility",
+     "list",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP003",
+   "url": "https://www.instagram.com/reel/SMP003/",
+   "collab": false,
+   "sets": [
+    "viral"
+   ],
+   "views": 171000,
+   "likes": 6200,
+   "comments": 2300,
+   "posted_at": "2026-05-09T12:00:00Z",
+   "duration_s": 12,
+   "audio": {
+    "type": "licensed",
+    "label": "Sample Artist B | Sample Track B",
+    "usage_count": 90000
+   },
+   "hook": {
+    "class": "life-after-knowing",
+    "overlay_words": 8,
+    "first_second_visual": "screen",
+    "paraphrase": "Describes how work feels after learning one workflow"
+   },
+   "format": {
+    "visual_setup": "screen-recording",
+    "overlay_style": "static, left-aligned, serif"
+   },
+   "caption": {
+    "opening_type": "reaction-line",
+    "words": 130,
+    "cta_type": "keyword-comment",
+    "hashtag_count": 25,
+    "structure": [
+     "cta",
+     "reaction",
+     "list",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP004",
+   "url": "https://www.instagram.com/reel/SMP004/",
+   "collab": false,
+   "sets": [
+    "viral"
+   ],
+   "views": 124000,
+   "likes": 5100,
+   "comments": 1800,
+   "posted_at": "2026-03-21T12:00:00Z",
+   "duration_s": 38,
+   "audio": {
+    "type": "original",
+    "label": "Original audio",
+    "usage_count": null
+   },
+   "hook": {
+    "class": "named-theory",
+    "overlay_words": 12,
+    "first_second_visual": "text",
+    "paraphrase": "Gives a memorable name to a concept most people only half know"
+   },
+   "format": {
+    "visual_setup": "handwritten-notes",
+    "overlay_style": "static, handwritten"
+   },
+   "caption": {
+    "opening_type": "claim-open",
+    "words": 180,
+    "cta_type": "save-share",
+    "hashtag_count": 20,
+    "structure": [
+     "claim",
+     "analogy",
+     "list",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP005",
+   "url": "https://www.instagram.com/reel/SMP005/",
+   "collab": false,
+   "sets": [
+    "viral"
+   ],
+   "views": 98000,
+   "likes": 3900,
+   "comments": 1250,
+   "posted_at": "2026-02-14T12:00:00Z",
+   "duration_s": 9.5,
+   "audio": {
+    "type": "licensed",
+    "label": "Sample Artist C | Sample Track C",
+    "usage_count": 40000
+   },
+   "hook": {
+    "class": "time-compression",
+    "overlay_words": 10,
+    "first_second_visual": "screen",
+    "paraphrase": "Shows a week of work done in minutes"
+   },
+   "format": {
+    "visual_setup": "screen-recording",
+    "overlay_style": "switching cards"
+   },
+   "caption": {
+    "opening_type": "cta-first",
+    "words": 95,
+    "cta_type": "keyword-comment",
+    "hashtag_count": 25,
+    "structure": [
+     "cta",
+     "list",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP006",
+   "url": "https://www.instagram.com/reel/SMP006/",
+   "collab": false,
+   "sets": [
+    "viral"
+   ],
+   "views": 86000,
+   "likes": 3100,
+   "comments": 980,
+   "posted_at": "2026-01-30T12:00:00Z",
+   "duration_s": 27,
+   "audio": {
+    "type": "original",
+    "label": "Original audio",
+    "usage_count": null
+   },
+   "hook": {
+    "class": "struggle-to-lesson",
+    "overlay_words": 13,
+    "first_second_visual": "face",
+    "paraphrase": "Describes a failed attempt and what changed afterwards"
+   },
+   "format": {
+    "visual_setup": "selfie-talking",
+    "overlay_style": "static, centered"
+   },
+   "caption": {
+    "opening_type": "story-open",
+    "words": 190,
+    "cta_type": "keyword-comment",
+    "hashtag_count": 25,
+    "structure": [
+     "cta",
+     "story",
+     "list",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP007",
+   "url": "https://www.instagram.com/reel/SMP007/",
+   "collab": false,
+   "sets": [
+    "viral"
+   ],
+   "views": 74000,
+   "likes": 2800,
+   "comments": 720,
+   "posted_at": "2025-12-11T12:00:00Z",
+   "duration_s": 14,
+   "audio": {
+    "type": "licensed",
+    "label": "Sample Artist D | Sample Track D",
+    "usage_count": 12000
+   },
+   "hook": {
+    "class": "outcome-flex",
+    "overlay_words": 11,
+    "first_second_visual": "face",
+    "paraphrase": "Promises that nothing blocks you once a tool is configured"
+   },
+   "format": {
+    "visual_setup": "car-selfie",
+    "overlay_style": "static, left-aligned, serif"
+   },
+   "caption": {
+    "opening_type": "cta-first",
+    "words": 140,
+    "cta_type": "keyword-comment",
+    "hashtag_count": 25,
+    "structure": [
+     "cta",
+     "reaction",
+     "list",
+     "stakes",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP008",
+   "url": "https://www.instagram.com/reel/SMP008/",
+   "collab": false,
+   "sets": [
+    "viral"
+   ],
+   "views": 61000,
+   "likes": 2200,
+   "comments": 540,
+   "posted_at": "2025-11-20T12:00:00Z",
+   "duration_s": 22,
+   "audio": {
+    "type": "original",
+    "label": "Original audio",
+    "usage_count": null
+   },
+   "hook": {
+    "class": "curiosity-gap",
+    "overlay_words": 15,
+    "first_second_visual": "face",
+    "paraphrase": "Teases a result and withholds how it works"
+   },
+   "format": {
+    "visual_setup": "b-roll",
+    "overlay_style": "switching cards"
+   },
+   "caption": {
+    "opening_type": "question-open",
+    "words": 120,
+    "cta_type": "question",
+    "hashtag_count": 15,
+    "structure": [
+     "question",
+     "list"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP009",
+   "url": "https://www.instagram.com/reel/SMP009/",
+   "collab": false,
+   "sets": [
+    "viral"
+   ],
+   "views": 52000,
+   "likes": 2000,
+   "comments": 430,
+   "posted_at": "2025-10-27T12:00:00Z",
+   "duration_s": 11,
+   "audio": {
+    "type": "licensed",
+    "label": "Sample Artist E | Sample Track E",
+    "usage_count": 210000
+   },
+   "hook": {
+    "class": "identity-pov",
+    "overlay_words": 13,
+    "first_second_visual": "face",
+    "paraphrase": "Speaks to one specific kind of viewer and their frustration"
+   },
+   "format": {
+    "visual_setup": "selfie-talking",
+    "overlay_style": "static, centered"
+   },
+   "caption": {
+    "opening_type": "reaction-line",
+    "words": 80,
+    "cta_type": "follow",
+    "hashtag_count": 10,
+    "structure": [
+     "reaction",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP010",
+   "url": "https://www.instagram.com/reel/SMP010/",
+   "collab": false,
+   "sets": [
+    "viral"
+   ],
+   "views": 47000,
+   "likes": 1700,
+   "comments": 390,
+   "posted_at": "2025-09-30T12:00:00Z",
+   "duration_s": 33,
+   "audio": {
+    "type": "original",
+    "label": "Original audio",
+    "usage_count": null
+   },
+   "hook": {
+    "class": "tutorial-promise",
+    "overlay_words": 12,
+    "first_second_visual": "screen",
+    "paraphrase": "Promises a complete walkthrough in half a minute"
+   },
+   "format": {
+    "visual_setup": "screen-recording",
+    "overlay_style": "static, left-aligned, serif"
+   },
+   "caption": {
+    "opening_type": "claim-open",
+    "words": 170,
+    "cta_type": "save-share",
+    "hashtag_count": 20,
+    "structure": [
+     "claim",
+     "list",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP011",
+   "url": "https://www.instagram.com/reel/SMP011/",
+   "collab": false,
+   "sets": [
+    "recent"
+   ],
+   "views": 9400,
+   "likes": 330,
+   "comments": 52,
+   "posted_at": "2026-10-30T12:00:00Z",
+   "duration_s": 10,
+   "audio": {
+    "type": "licensed",
+    "label": "Sample Artist F | Sample Track F",
+    "usage_count": 6000
+   },
+   "hook": {
+    "class": "outcome-flex",
+    "overlay_words": 10,
+    "first_second_visual": "face",
+    "paraphrase": "Claims a quick win from one change"
+   },
+   "format": {
+    "visual_setup": "car-selfie",
+    "overlay_style": "static, left-aligned, serif"
+   },
+   "caption": {
+    "opening_type": "cta-first",
+    "words": 110,
+    "cta_type": "keyword-comment",
+    "hashtag_count": 25,
+    "structure": [
+     "cta",
+     "list",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP012",
+   "url": "https://www.instagram.com/reel/SMP012/",
+   "collab": false,
+   "sets": [
+    "recent"
+   ],
+   "views": 6100,
+   "likes": 210,
+   "comments": 28,
+   "posted_at": "2026-10-27T12:00:00Z",
+   "duration_s": 28,
+   "audio": {
+    "type": "original",
+    "label": "Original audio",
+    "usage_count": null
+   },
+   "hook": {
+    "class": "tutorial-promise",
+    "overlay_words": 11,
+    "first_second_visual": "screen",
+    "paraphrase": "Walks through steps of a common task"
+   },
+   "format": {
+    "visual_setup": "screen-recording",
+    "overlay_style": "switching cards"
+   },
+   "caption": {
+    "opening_type": "claim-open",
+    "words": 150,
+    "cta_type": "save-share",
+    "hashtag_count": 15,
+    "structure": [
+     "claim",
+     "list"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP013",
+   "url": "https://www.instagram.com/reel/SMP013/",
+   "collab": false,
+   "sets": [
+    "recent"
+   ],
+   "views": 15800,
+   "likes": 640,
+   "comments": 120,
+   "posted_at": "2026-10-24T12:00:00Z",
+   "duration_s": 15,
+   "audio": {
+    "type": "original",
+    "label": "Original audio",
+    "usage_count": null
+   },
+   "hook": {
+    "class": "struggle-to-lesson",
+    "overlay_words": 13,
+    "first_second_visual": "face",
+    "paraphrase": "Shares a recent mistake and the fix"
+   },
+   "format": {
+    "visual_setup": "selfie-talking",
+    "overlay_style": "static, centered"
+   },
+   "caption": {
+    "opening_type": "story-open",
+    "words": 170,
+    "cta_type": "keyword-comment",
+    "hashtag_count": 25,
+    "structure": [
+     "cta",
+     "story",
+     "list",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP014",
+   "url": "https://www.instagram.com/reel/SMP014/",
+   "collab": false,
+   "sets": [
+    "recent"
+   ],
+   "views": 4800,
+   "likes": 150,
+   "comments": 18,
+   "posted_at": "2026-10-21T12:00:00Z",
+   "duration_s": 9,
+   "audio": {
+    "type": "licensed",
+    "label": "Sample Artist G | Sample Track G",
+    "usage_count": 800
+   },
+   "hook": {
+    "class": "curiosity-gap",
+    "overlay_words": 14,
+    "first_second_visual": "text",
+    "paraphrase": "Teases a surprising result with no payoff"
+   },
+   "format": {
+    "visual_setup": "b-roll",
+    "overlay_style": "switching cards"
+   },
+   "caption": {
+    "opening_type": "question-open",
+    "words": 70,
+    "cta_type": "none",
+    "hashtag_count": 10,
+    "structure": [
+     "question"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP015",
+   "url": "https://www.instagram.com/reel/SMP015/",
+   "collab": false,
+   "sets": [
+    "recent"
+   ],
+   "views": 7300,
+   "likes": 260,
+   "comments": 36,
+   "posted_at": "2026-10-18T12:00:00Z",
+   "duration_s": 12,
+   "audio": {
+    "type": "licensed",
+    "label": "Sample Artist F | Sample Track F",
+    "usage_count": 6000
+   },
+   "hook": {
+    "class": "outcome-flex",
+    "overlay_words": 9,
+    "first_second_visual": "face",
+    "paraphrase": "Another configure-once-and-forget promise"
+   },
+   "format": {
+    "visual_setup": "car-selfie",
+    "overlay_style": "static, left-aligned, serif"
+   },
+   "caption": {
+    "opening_type": "cta-first",
+    "words": 125,
+    "cta_type": "keyword-comment",
+    "hashtag_count": 25,
+    "structure": [
+     "cta",
+     "reaction",
+     "list",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP016",
+   "url": "https://www.instagram.com/reel/SMP016/",
+   "collab": false,
+   "sets": [
+    "recent"
+   ],
+   "views": 5200,
+   "likes": 170,
+   "comments": 22,
+   "posted_at": "2026-10-14T12:00:00Z",
+   "duration_s": 36,
+   "audio": {
+    "type": "original",
+    "label": "Original audio",
+    "usage_count": null
+   },
+   "hook": {
+    "class": "named-theory",
+    "overlay_words": 12,
+    "first_second_visual": "text",
+    "paraphrase": "Names a concept and explains it with an analogy"
+   },
+   "format": {
+    "visual_setup": "handwritten-notes",
+    "overlay_style": "static, handwritten"
+   },
+   "caption": {
+    "opening_type": "claim-open",
+    "words": 160,
+    "cta_type": "save-share",
+    "hashtag_count": 20,
+    "structure": [
+     "claim",
+     "analogy",
+     "list"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP017",
+   "url": "https://www.instagram.com/reel/SMP017/",
+   "collab": false,
+   "sets": [
+    "recent"
+   ],
+   "views": 28400,
+   "likes": 1210,
+   "comments": 340,
+   "posted_at": "2026-10-10T12:00:00Z",
+   "duration_s": 30,
+   "audio": {
+    "type": "original",
+    "label": "Original audio",
+    "usage_count": null
+   },
+   "hook": {
+    "class": "struggle-to-lesson",
+    "overlay_words": 14,
+    "first_second_visual": "face",
+    "paraphrase": "Opens with a failure and a promise of lessons"
+   },
+   "format": {
+    "visual_setup": "selfie-talking",
+    "overlay_style": "static, centered"
+   },
+   "caption": {
+    "opening_type": "story-open",
+    "words": 205,
+    "cta_type": "keyword-comment",
+    "hashtag_count": 25,
+    "structure": [
+     "cta",
+     "story",
+     "credibility",
+     "list",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP018",
+   "url": "https://www.instagram.com/reel/SMP018/",
+   "collab": false,
+   "sets": [
+    "recent"
+   ],
+   "views": 3900,
+   "likes": 110,
+   "comments": 12,
+   "posted_at": "2026-10-06T12:00:00Z",
+   "duration_s": 13,
+   "audio": {
+    "type": "licensed",
+    "label": "Sample Artist H | Sample Track H",
+    "usage_count": 300
+   },
+   "hook": {
+    "class": "identity-pov",
+    "overlay_words": 13,
+    "first_second_visual": "face",
+    "paraphrase": "Calls out a specific type of viewer"
+   },
+   "format": {
+    "visual_setup": "selfie-talking",
+    "overlay_style": "static, centered"
+   },
+   "caption": {
+    "opening_type": "reaction-line",
+    "words": 75,
+    "cta_type": "follow",
+    "hashtag_count": 10,
+    "structure": [
+     "reaction",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP019",
+   "url": "https://www.instagram.com/reel/SMP019/",
+   "collab": false,
+   "sets": [
+    "recent"
+   ],
+   "views": 8800,
+   "likes": 300,
+   "comments": 46,
+   "posted_at": "2026-10-02T12:00:00Z",
+   "duration_s": 17,
+   "audio": {
+    "type": "licensed",
+    "label": "Sample Artist B | Sample Track B",
+    "usage_count": 90000
+   },
+   "hook": {
+    "class": "life-after-knowing",
+    "overlay_words": 8,
+    "first_second_visual": "screen",
+    "paraphrase": "Describes the change after learning a workflow"
+   },
+   "format": {
+    "visual_setup": "screen-recording",
+    "overlay_style": "static, left-aligned, serif"
+   },
+   "caption": {
+    "opening_type": "reaction-line",
+    "words": 125,
+    "cta_type": "keyword-comment",
+    "hashtag_count": 25,
+    "structure": [
+     "cta",
+     "reaction",
+     "list",
+     "cta"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMP020",
+   "url": "https://www.instagram.com/reel/SMP020/",
+   "collab": false,
+   "sets": [
+    "recent"
+   ],
+   "views": 4300,
+   "likes": 120,
+   "comments": 15,
+   "posted_at": "2026-09-29T12:00:00Z",
+   "duration_s": 20,
+   "audio": {
+    "type": "original",
+    "label": "Original audio",
+    "usage_count": null
+   },
+   "hook": {
+    "class": "time-compression",
+    "overlay_words": 10,
+    "first_second_visual": "screen",
+    "paraphrase": "Compresses a long task into a short demo"
+   },
+   "format": {
+    "visual_setup": "screen-recording",
+    "overlay_style": "switching cards"
+   },
+   "caption": {
+    "opening_type": "cta-first",
+    "words": 90,
+    "cta_type": "keyword-comment",
+    "hashtag_count": 25,
+    "structure": [
+     "cta",
+     "list"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  },
+  {
+   "id": "SMPCOL",
+   "url": "https://www.instagram.com/reel/SMPCOL/",
+   "collab": true,
+   "sets": [
+    "recent"
+   ],
+   "views": 52000,
+   "likes": 900,
+   "comments": 40,
+   "posted_at": "2026-10-12T12:00:00Z",
+   "duration_s": 12,
+   "audio": {
+    "type": "original",
+    "label": "Original audio",
+    "usage_count": null
+   },
+   "hook": {
+    "class": "other",
+    "overlay_words": 0,
+    "first_second_visual": "text",
+    "paraphrase": "Collab reel by another creator"
+   },
+   "format": {
+    "visual_setup": "b-roll",
+    "overlay_style": "none"
+   },
+   "caption": {
+    "opening_type": "reaction-line",
+    "words": 20,
+    "cta_type": "none",
+    "hashtag_count": 0,
+    "structure": [
+     "reaction"
+    ]
+   },
+   "spoken": {
+    "status": "unverified"
+   }
+  }
+ ],
+ "posts": [
+  {
+   "id": "SMP-P1",
+   "type": "carousel",
+   "slides": 6,
+   "likes": 2100,
+   "comments": 260,
+   "posted_at": "2026-10-28T12:00:00Z",
+   "caption_words": 160,
+   "hashtag_count": 18,
+   "topic": "what a tool can and cannot do",
+   "cta_type": "save-share",
+   "collab": false
+  },
+  {
+   "id": "SMP-P2",
+   "type": "photo",
+   "slides": null,
+   "likes": 980,
+   "comments": 70,
+   "posted_at": "2026-10-20T12:00:00Z",
+   "caption_words": 40,
+   "hashtag_count": 10,
+   "topic": "personal day-in-the-life",
+   "cta_type": "none",
+   "collab": false
+  },
+  {
+   "id": "SMP-P3",
+   "type": "carousel",
+   "slides": 8,
+   "likes": 3400,
+   "comments": 410,
+   "posted_at": "2026-10-09T12:00:00Z",
+   "caption_words": 190,
+   "hashtag_count": 20,
+   "topic": "step-by-step workflow breakdown",
+   "cta_type": "keyword-comment",
+   "collab": false
+  },
+  {
+   "id": "SMP-P4",
+   "type": "photo",
+   "slides": null,
+   "likes": 760,
+   "comments": 44,
+   "posted_at": "2026-09-25T12:00:00Z",
+   "caption_words": 55,
+   "hashtag_count": 10,
+   "topic": "desk setup",
+   "cta_type": "none",
+   "collab": false
+  },
+  {
+   "id": "SMP-P5",
+   "type": "carousel",
+   "slides": 5,
+   "likes": 1500,
+   "comments": 150,
+   "posted_at": "2026-09-12T12:00:00Z",
+   "caption_words": 140,
+   "hashtag_count": 15,
+   "topic": "common mistakes list",
+   "cta_type": "save-share",
+   "collab": false
+  },
+  {
+   "id": "SMP-P6",
+   "type": "photo",
+   "slides": null,
+   "likes": 640,
+   "comments": 30,
+   "posted_at": "2026-08-30T12:00:00Z",
+   "caption_words": 30,
+   "hashtag_count": 5,
+   "topic": "travel moment",
+   "cta_type": "none",
+   "collab": false
+  }
+ ],
+ "analysis": {
+  "verdict": "The engine is a personal result or failure told in a few words on screen, closed by a one-word comment call to action.",
+  "takeaways": [
+   {
+    "claim": "Struggle-to-lesson hooks lead on comment rate",
+    "evidence": "4 of 20 reels, median comment rate above every other class; 3 sit in the viral set.",
+    "confidence": "medium",
+    "why_hypothesis": "A stake the viewer can feel invites a reply more than a tool recap does."
+   },
+   {
+    "claim": "Reach comes from the format, not the topic",
+    "evidence": "The same car selfie setup appears at both ends of the view range.",
+    "confidence": "low",
+    "why_hypothesis": "Hook and call to action may explain the gap more than the setup."
+   },
+   {
+    "claim": "One-word comment prompts dominate the top reels",
+    "evidence": "7 of 10 viral reels use it; the weakest recent reels use none.",
+    "confidence": "high",
+    "why_hypothesis": "The prompt turns a view into a comment, which the feed weighs heavily."
+   }
+  ],
+  "viral_vs_recent": "Breakouts open with a stake and carry a keyword prompt. The weaker recent reels lean on teasers and tutorials without a prompt, so the gap looks like hook and call to action, not production.",
+  "hook_notes": "Outcome and failure hooks repeat across both sets; curiosity teasers underperform in both.",
+  "caption_notes": "Captions open with the action line, add a short reaction, then a list, and close by repeating the prompt. Carousels lean on save prompts instead.",
+  "steal": [
+   "Keep the overlay static for the whole video",
+   "Open the caption with the action line, then one reaction line",
+   "Repeat the one-word prompt at the end of the caption",
+   "Use a failure-first story arc for the 30-second format"
+  ],
+  "avoid": [
+   "Curiosity teasers with no payoff and no prompt",
+   "Stacking follow, save and comment asks in one caption"
+  ],
+  "tests": [
+   {
+    "idea": "Post two reels on the same topic, one failure-first and one result-first",
+    "why": "isolates the hook class",
+    "metric": "comment rate in the first 48 hours"
+   },
+   {
+    "idea": "Same reel with and without a one-word prompt",
+    "why": "checks the prompt effect directly",
+    "metric": "comments per 1,000 views"
+   }
+  ],
+  "caveats": [
+   "Small sample: 10 reels per set, medians only",
+   "Spoken content not verified",
+   "Views on the grid are lifetime totals, so older reels have had longer to grow"
+  ]
+ }
+}
