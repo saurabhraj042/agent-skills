@@ -1,0 +1,51 @@
+{
+  "_help": "Buckets are checked top to bottom, first match wins. A bucket matches when ANY of its rules matches; a rule matches when ALL of its keys match. Rule keys: ext (list, lowercase, with dot), kind (image|video|audio|document|archive|other), name_regex, min_size_mb, max_size_mb, older_than_days, video {orientation: portrait|landscape|square, min_height, max_height, min_duration, max_duration}. Bucket keys: name (use / for sub-folders), group_by ('month' adds a YYYY-MM sub-folder), ask_claude (true = Claude looks at the file and picks one of the preset's ai_buckets; the bucket name is the fallback).",
+  "presets": {
+    "general": {
+      "description": "Everyday sort for Downloads, Desktop, Documents or any mixed folder.",
+      "buckets": [
+        {"name": "Screenshots", "rules": [{"kind": "image", "name_regex": "^(screenshot|screen shot|cleanshot|snip|capture)"}]},
+        {"name": "Screen Recordings", "rules": [{"kind": "video", "name_regex": "^(screen recording|screenrecording|recording|capture)"}]},
+        {"name": "Installers", "rules": [{"ext": [".dmg", ".pkg", ".exe", ".msi", ".deb", ".rpm", ".apk", ".appimage", ".iso"]}]},
+        {"name": "Images", "rules": [{"kind": "image"}], "group_by": "month"},
+        {"name": "Videos", "rules": [{"kind": "video"}], "group_by": "month"},
+        {"name": "Audio", "rules": [{"kind": "audio"}]},
+        {"name": "Documents/PDFs", "rules": [{"ext": [".pdf"]}]},
+        {"name": "Documents/Word & Text", "rules": [{"ext": [".doc", ".docx", ".rtf", ".odt", ".pages", ".txt", ".md"]}]},
+        {"name": "Documents/Spreadsheets", "rules": [{"ext": [".xls", ".xlsx", ".csv", ".tsv", ".ods", ".numbers"]}]},
+        {"name": "Documents/Presentations", "rules": [{"ext": [".ppt", ".pptx", ".key", ".odp"]}]},
+        {"name": "Ebooks", "rules": [{"ext": [".epub", ".mobi", ".azw3"]}]},
+        {"name": "Design", "rules": [{"ext": [".psd", ".ai", ".fig", ".sketch", ".xd", ".svg", ".indd", ".eps"]}]},
+        {"name": "Fonts", "rules": [{"ext": [".ttf", ".otf", ".woff", ".woff2"]}]},
+        {"name": "Code & Data", "rules": [{"ext": [".json", ".xml", ".yaml", ".yml", ".py", ".js", ".ts", ".ipynb", ".sql", ".html", ".css", ".sh", ".java", ".go", ".rs", ".c", ".cpp"]}]},
+        {"name": "Archives", "rules": [{"kind": "archive"}]}
+      ]
+    },
+    "creator": {
+      "description": "Video-creator sort: raw footage, exports, screen recordings, audio, thumbnails. Claude looks at footage and files it by what is in it.",
+      "ai_buckets": [
+        "Footage/Talking-head",
+        "Footage/B-roll/Gym",
+        "Footage/B-roll/Travel",
+        "Footage/B-roll/Desk & Coding",
+        "Footage/B-roll/Lifestyle",
+        "Footage/Screen Recordings",
+        "Footage/Other"
+      ],
+      "buckets": [
+        {"name": "Exports", "rules": [{"kind": "video", "name_regex": "(export|final|render|_v\\d+|published)"}], "group_by": "month"},
+        {"name": "Footage/Screen Recordings", "rules": [{"kind": "video", "name_regex": "^(screen recording|screenrecording|recording|capture)"}], "group_by": "month"},
+        {"name": "Footage/Talking-head", "ask_claude": true, "rules": [{"kind": "video", "video": {"min_duration": 0}}], "group_by": "month"},
+        {"name": "Thumbnails", "rules": [{"kind": "image", "name_regex": "(thumb|cover|poster)"}]},
+        {"name": "Screenshots", "rules": [{"kind": "image", "name_regex": "^(screenshot|screen shot|cleanshot|snip)"}]},
+        {"name": "Photos", "rules": [{"kind": "image"}], "group_by": "month"},
+        {"name": "Audio/Music & SFX", "rules": [{"kind": "audio"}]},
+        {"name": "Captions & Scripts", "rules": [{"ext": [".srt", ".vtt", ".ass", ".txt", ".md", ".docx"]}]},
+        {"name": "Project Files", "rules": [{"ext": [".prproj", ".drp", ".fcpxml", ".aep", ".cap", ".capcut", ".veg", ".kdenlive"]}]},
+        {"name": "Documents/PDFs", "rules": [{"ext": [".pdf"]}]},
+        {"name": "Design", "rules": [{"ext": [".psd", ".ai", ".fig", ".svg", ".xd"]}]},
+        {"name": "Archives", "rules": [{"kind": "archive"}]}
+      ]
+    }
+  }
+}

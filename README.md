@@ -64,6 +64,7 @@ More skills are added over time. Watch the repo to get notified.
 | Skill | What it does |
 | ----- | ------------ |
 | [🎬 reel-competitor-teardown](claude/reel-competitor-teardown) | View-only analysis of one Instagram creator's reels and posts, producing a designed report with hook and caption patterns and a playbook. |
+| [🗂️ folder-organizer](claude/folder-organizer) | Organizes any messy folder (Downloads, footage, photos, PDFs) on Mac or Windows. Dry-run plan first, moves only after approval, undoable, with a searchable clip catalog. |
 
 ## 🤝 Contributing
 
